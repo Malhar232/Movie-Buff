@@ -1,0 +1,270 @@
+* {
+  font-family: sans-serif;
+}
+@font-face {
+  font-family: MalharD;
+  src: url(./unicode.aachenb.ttf);
+}
+html {
+  scroll-behavior: smooth;
+}
+h1 {
+  font-family: MalharD;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ef0914;
+  background-image: -webkit-linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.4) 70%,
+    transparent,
+    transparent
+  );
+}
+body {
+  background: #221f1f;
+  overflow-x: hidden;
+  transition: all ease-in-out 0.3s;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ef0914;
+  transition: 0.2s ease-out;
+  padding: 0 5px;
+}
+h1,
+svg {
+  color: #f5f5f1;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #f5f5f1;
+}
+.seeAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: end;
+  flex: 1;
+  padding: 0 50px;
+}
+.seeAll h1 {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin: 0 !important;
+}
+.seeAll h1:hover {
+  color: #ef0914;
+}
+
+.seeAll h1:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.seeAll h1:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.links_all {
+  display: flex;
+  align-items: center;
+}
+.MovieLists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Movies {
+  display: flex;
+  flex-direction: row;
+}
+.Search_list {
+  padding: 50px;
+}
+.Search_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 50px 0px;
+}
+
+.MoviesLink {
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.1s ease-in-out;
+  color: #f5f5f1;
+  font-family: MalharD;
+}
+.MoviesLink:hover {
+  color: #ef0914 !important;
+}
+
+#star-twelve {
+  background: #ef0914;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+}
+#star-twelve::before,
+#star-twelve::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background: #ef0914;
+}
+#star-twelve::before {
+  transform: rotate(30deg);
+}
+#star-twelve::after {
+  transform: rotate(60deg);
+}
+#card {
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+.LatestMovie #card:after {
+  position: absolute;
+  width: 120%;
+  height: 12%;
+  left: 1%;
+  transform: translateX(-10%);
+  border-radius: 50%;
+  z-index: -1;
+  bottom: 25%;
+  content: "";
+  box-shadow: 0 100px 44px rgba(255, 255, 255, 0.5);
+}
+#card:hover {
+  -webkit-box-shadow: 0 0 20px #f5f5f1;
+  box-shadow: 0 0 20px #f5f5f1;
+  transform: translateY(-10px);
+}
+.InputSearch {
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 0 0 15px;
+  width: 200px;
+  outline: none;
+  border: none;
+}
+.SearchBar {
+  display: flex;
+  align-items: center;
+}
+.NavBar {
+  padding: 50px 50px 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.NavBar a {
+  display: flex;
+  align-items: center;
+}
+.NavBar a svg {
+  padding: 0 0 0 10px;
+}
+.SearchBar button {
+  border-radius: 150px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.SearchBar svg:hover {
+  color: #ef0914;
+}
+.backArrow,
+.forwardArrow {
+  color: #f5f5f1;
+  background-color: transparent;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid #f5f5f1;
+  margin: 0 50px 20px 50px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.backArrow:hover,
+.forwardArrow:hover {
+  background: #ef0914;
+}
+.MovieDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .Movies {
+    overflow-x: scroll;
+  }
+  .MovieLists {
+    align-items: unset;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0) 0%,
+      transparent,
+      transparent
+    );
+  }
+  .seeAll {
+    display: block;
+  }
+  .links_all {
+    justify-content: flex-end;
+    padding: 20px 0 0 0;
+  }
+  .NavBar {
+    display: flex;
+    flex-direction: column;
+  }
+  .MoviesLink {
+    margin-bottom: 10px;
+  }
+  .Search_list {
+    grid-template-columns: 1fr;
+  }
+  #searchCard {
+    width: 272px !important;
+  }
+  .MuiCardActionArea-root {
+    display: flex !important;
+  }
+}
